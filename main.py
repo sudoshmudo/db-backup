@@ -21,7 +21,7 @@ def get_date():
 def main():
     filename = '{}_{}.sql'.format(FILE_PREFIX, get_date())
 
-    os.system('sudo exec -t {} pg_dumpall -c -U {} > {}'.format(DOCKER_CONTAINER, POSTGRES_USER, filename))
+    os.system('docker exec -t {} pg_dumpall -c -U {} > {}'.format(DOCKER_CONTAINER, POSTGRES_USER, filename))
 
     synology_server = filestation.FileStation(SYNOLOGY_HOST, SYNOLOGY_PORT, SYNOLOGY_USER, SYNOLOGY_PASSWORD, secure=True)
 
