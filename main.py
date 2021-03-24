@@ -19,6 +19,8 @@ def get_date():
     return datetime.date.today().strftime('%Y-%m-%d')
 
 def main():
+    os.chdir('/tmp')
+    
     filename = '{}_{}.sql'.format(FILE_PREFIX, get_date())
 
     os.system('docker exec -t {} pg_dumpall -c -U {} > {}'.format(DOCKER_CONTAINER, POSTGRES_USER, filename))
