@@ -23,7 +23,7 @@ def main():
 
     os.system('exec -t {} pg_dumpall -c -U {} > {}'.format(DOCKER_CONTAINER, POSTGRES_USER, filename))
 
-    synology_server = filestation.FileStation(SYNOLOGY_HOST, SYNOLOGY_PORT, SYNOLOGY_PATH, SYNOLOGY_PASSWORD, secure=True)
+    synology_server = filestation.FileStation(SYNOLOGY_HOST, SYNOLOGY_PORT, SYNOLOGY_USER, SYNOLOGY_PASSWORD, secure=True)
 
     synology_server.upload_file(SYNOLOGY_PATH, filename)
 
