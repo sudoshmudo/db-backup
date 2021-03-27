@@ -16,7 +16,7 @@ SYNOLOGY_USER = os.environ['SYNOLOGY_USER']
 SYNOLOGY_HOST = os.environ['SYNOLOGY_HOST']
 
 def get_date():
-    return datetime.date.today().strftime('%Y-%m-%d')
+    return datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 
 def main():
     os.chdir('/tmp')
