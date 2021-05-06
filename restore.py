@@ -28,7 +28,7 @@ def main():
     )
 
     results = synology_server.search_start(
-        folder_path=SYNOLOGY_PATH, pattern="fin_", extension="sql"
+        folder_path=SYNOLOGY_PATH, pattern="{}_".format(FILE_PREFIX), extension="sql"
     )
 
     task_id = results.split("your id is: ")[1].replace('"', "")
