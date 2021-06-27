@@ -38,7 +38,7 @@ def grant_access(database: str, user: str):
     """Grant database access to user."""
     os.system(
         'docker exec -u postgres -it {} psql -c "grant all privileges on database {} to {};"'.format(
-            database, user
+            DOCKER_CONTAINER, database, user
         )
     )
 
